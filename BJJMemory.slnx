@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="src/BJJMemory.API/BJJMemory.Api.csproj" />
+  <Project Path="src/BJJMemory.Application/BJJMemory.Application.csproj" />
+  <Project Path="src/BJJMemory.Communication/BJJMemory.Communication.csproj" />
+  <Project Path="src/BJJMemory.Domain/BJJMemory.Domain.csproj" />
+  <Project Path="src/BJJMemory.Exception/BJJMemory.Exception.csproj" />
+  <Project Path="src/BJJMemory.Infrastructure/BJJMemory.Infrastructure.csproj" />
+</Solution>

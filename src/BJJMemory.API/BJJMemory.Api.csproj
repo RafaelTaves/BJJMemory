@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.16.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BJJMemory.Application\BJJMemory.Application.csproj" />
+    <ProjectReference Include="..\BJJMemory.Communication\BJJMemory.Communication.csproj" />
+    <ProjectReference Include="..\BJJMemory.Exception\BJJMemory.Exception.csproj" />
+    <ProjectReference Include="..\BJJMemory.Infrastructure\BJJMemory.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+</Project>
