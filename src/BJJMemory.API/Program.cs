@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Mvc.Filters;
+using BJJMemory.Application;
+using BJJMemory.Communication;
+using BJJMemory.Api.Filters;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
