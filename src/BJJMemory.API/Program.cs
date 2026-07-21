@@ -19,6 +19,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<ITokenProvider, HttpContextTokenValue>();
 
@@ -54,6 +55,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
