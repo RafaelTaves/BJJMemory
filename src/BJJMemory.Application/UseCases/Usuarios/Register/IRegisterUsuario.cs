@@ -5,5 +5,5 @@ namespace BJJMemory.Application.UseCases.Usuarios.Register;
 
 public interface IRegisterUsuario
 {
-    Task<RegisterUsuarioResponse> Execute(RequestRegisterUsuario request);
+    Task<ResponseRegisterUsuario> Execute(RequestRegisterUsuario request);
 }

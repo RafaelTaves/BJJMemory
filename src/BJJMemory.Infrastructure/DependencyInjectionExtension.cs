@@ -1,7 +1,13 @@
 ﻿using BJJMemory.Domain.Repositories;
 using BJJMemory.Domain.Repositories.Usuarios;
+using BJJMemory.Domain.Security.Cryptography;
+using BJJMemory.Domain.Security.Tokens;
+using BJJMemory.Domain.Services.LoggedUser;
 using BJJMemory.Infrastructure.DataAccess;
 using BJJMemory.Infrastructure.DataAccess.Repositories;
+using BJJMemory.Infrastructure.Security.Tokens;
+using BJJMemory.Infrastructure.Services.LoggedUser;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -39,6 +45,6 @@ public static class DependencyInjectionExtension
     {
         var connectionString = configuration.GetConnectionString("Connection");
 
-        services.AddDbContext<BJJMemoryDbContext>(config => config.UseNpgsql(connectionString));
+        services.AddDbContext<BJJMemoryDbContext>(config => config.UseNpgsql(connectionString)); 
     }
 }
