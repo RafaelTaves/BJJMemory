@@ -1,5 +1,6 @@
 ﻿using BJJMemory.Application.UseCases.Usuarios.Get;
 using BJJMemory.Application.UseCases.Usuarios.Register;
+using BJJMemory.Application.UseCases.Usuarios.Update;
 using BJJMemory.Communication.Responses;
 using BJJMemory.Communication.Usuarios.Requests;
 using BJJMemory.Communication.Usuarios.Responses;
@@ -34,5 +35,17 @@ public class UsuarioController : ControllerBase
         var response = await useCase.Execute();
 
         return Ok(response);
+    }
+
+    [HttpPut]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseError), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> Update(
+        [FromServices] IUpdateUsuario useCase,
+        [FromBody] RequestUpdateUsuario request)
+    {
+        await useCase.Execute(request);
+
+        return NoContent();
     }
 }
