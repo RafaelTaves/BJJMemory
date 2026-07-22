@@ -23,7 +23,7 @@ internal class UsuarioRepository : IUsuarioReadOnlyRepository, IUsuarioUpdateOnl
         return await _dbContext.Usuarios.AnyAsync(user => user.Email == email);
     }
 
-    public async Task<Usuario> GetUserByEmail(string email)
+    public async Task<Usuario?> GetUserByEmail(string email)
     {
         return await _dbContext.Usuarios.AsNoTracking().FirstOrDefaultAsync(user => user.Email == email);
     }
@@ -44,4 +44,5 @@ internal class UsuarioRepository : IUsuarioReadOnlyRepository, IUsuarioUpdateOnl
         _dbContext.Usuarios.Remove(user);
         return true;
     }
+
 }

@@ -6,5 +6,6 @@ public interface IUsuarioReadOnlyRepository
 {
     Task<bool> ExistUserWithEmail(string email);
 
-    Task<Usuario> GetUserByEmail(string email);
+    Task<Usuario?> GetUserByEmail(string email);
+
 }

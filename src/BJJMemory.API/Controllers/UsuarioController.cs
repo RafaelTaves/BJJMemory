@@ -1,4 +1,5 @@
-﻿using BJJMemory.Application.UseCases.Usuarios.Register;
+﻿using BJJMemory.Application.UseCases.Usuarios.Get;
+using BJJMemory.Application.UseCases.Usuarios.Register;
 using BJJMemory.Communication.Responses;
 using BJJMemory.Communication.Usuarios.Requests;
 using BJJMemory.Communication.Usuarios.Responses;
@@ -13,6 +14,7 @@ namespace BJJMemory.Api.Controllers;
 public class UsuarioController : ControllerBase
 {
     [HttpPost]
+    [AllowAnonymous]
     [ProducesResponseType(typeof(ResponseRegisterUsuario), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseError), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Register(
@@ -22,5 +24,15 @@ public class UsuarioController : ControllerBase
         var response = await useCase.Execute(request);
 
         return Created(string.Empty, response);
+    }
+
+    [HttpGet]
+    [ProducesResponseType(typeof(ResponseGetUsuario), StatusCodes.Status200OK)]
+    public async Task<IActionResult> Get(
+        [FromServices] IGetUsuario useCase)
+    {
+        var response = await useCase.Execute();
+
+        return Ok(response);
     }
 }
