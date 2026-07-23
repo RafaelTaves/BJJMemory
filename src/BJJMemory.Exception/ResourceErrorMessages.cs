@@ -26,6 +26,13 @@ public static class ResourceErrorMessages
     public static string PASSWORD_REQUIRED => GetString(nameof(PASSWORD_REQUIRED));
     public static string PASSWORD_SPECIAL_CHARACTER => GetString(nameof(PASSWORD_SPECIAL_CHARACTER));
     public static string PASSWORD_UPPERCASE_LETTER => GetString(nameof(PASSWORD_UPPERCASE_LETTER));
+    public static string POSITION_CATEGORY_NOT_FOUND => GetString(nameof(POSITION_CATEGORY_NOT_FOUND));
+    public static string POSITION_CATEGORY_REQUIRED => GetString(nameof(POSITION_CATEGORY_REQUIRED));
+    public static string POSITION_DESCRIPTION_REQUIRED => GetString(nameof(POSITION_DESCRIPTION_REQUIRED));
+    public static string POSITION_INVALID_AUDIO_LINK => GetString(nameof(POSITION_INVALID_AUDIO_LINK));
+    public static string POSITION_INVALID_VIDEO_LINK => GetString(nameof(POSITION_INVALID_VIDEO_LINK));
+    public static string POSITION_NOT_FOUND => GetString(nameof(POSITION_NOT_FOUND));
+    public static string POSITION_TITLE_REQUIRED => GetString(nameof(POSITION_TITLE_REQUIRED));
     public static string TITLE_REQUIRED => GetString(nameof(TITLE_REQUIRED));
     public static string UNKNOWN_ERROR => GetString(nameof(UNKNOWN_ERROR));
     public static string USER_NOT_FOUND => GetString(nameof(USER_NOT_FOUND));

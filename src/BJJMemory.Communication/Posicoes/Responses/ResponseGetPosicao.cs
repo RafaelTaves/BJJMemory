@@ -1,6 +1,6 @@
-﻿namespace BJJMemory.Domain.Entities;
+﻿namespace BJJMemory.Communication.Posicoes.Responses;
 
-public class Posicoes
+public class ResponseGetPosicao
 {
     public Guid Id { get; set; }
 
@@ -10,9 +10,9 @@ public class Posicoes
 
     public string Descricao { get; set; } = string.Empty;
 
-    public string? AudioLink { get; set; } = string.Empty;
+    public string? AudioLink { get; set; }
 
-    public string? VideoLink { get; set; } = string.Empty;
+    public string? VideoLink { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

@@ -4,9 +4,14 @@ using BJJMemory.Application.UseCases.Categorias.Get;
 using BJJMemory.Application.UseCases.Categorias.Update;
 using BJJMemory.Application.UseCases.Login;
 using BJJMemory.Application.UseCases.Usuarios.Get;
+using BJJMemory.Application.UseCases.Posicoes.Create;
+using BJJMemory.Application.UseCases.Posicoes.Delete;
+using BJJMemory.Application.UseCases.Posicoes.Get;
+using BJJMemory.Application.UseCases.Posicoes.Update;
 using BJJMemory.Application.UseCases.Usuarios.Register;
 using BJJMemory.Application.UseCases.Usuarios.Update;
 using BJJMemory.Communication.Categorias.Requests;
+using BJJMemory.Communication.Posicoes.Requests;
 using BJJMemory.Communication.Usuarios.Requests;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,7 +35,12 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetUsuario, GetUsuario>();
         services.AddScoped<IRegisterUsuario, RegisterUsuario>();
         services.AddScoped<IUpdateUsuario, UpdateUsuario>();
+        services.AddScoped<ICreatePosicao, CreatePosicao>();
+        services.AddScoped<IGetPosicao, GetPosicao>();
+        services.AddScoped<IUpdatePosicao, UpdatePosicao>();
+        services.AddScoped<IDeletePosicao, DeletePosicao>();
         services.AddScoped<IValidator<RequestCreateCategoria>, CreateCategoriaValidator>();
         services.AddScoped<IValidator<RequestRegisterUsuario>, RegisterUsuarioValidator>();
+        services.AddScoped<IValidator<RequestCreatePosicao>, CreatePosicaoValidator>();
     }
 }

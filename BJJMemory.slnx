@@ -5,4 +5,5 @@
   <Project Path="src/BJJMemory.Domain/BJJMemory.Domain.csproj" />
   <Project Path="src/BJJMemory.Exception/BJJMemory.Exception.csproj" />
   <Project Path="src/BJJMemory.Infrastructure/BJJMemory.Infrastructure.csproj" />
+  <Project Path="tests/BJJMemory.Application.Tests/BJJMemory.Application.Tests.csproj" />
 </Solution>

@@ -4,6 +4,10 @@ Este projeto é uma API organizada em camadas, seguindo padrões de Clean Archit
 
 Você deve seguir o padrão atual do projeto ao implementar novas features
 
+Nos UseCase dentro de application, o mapeamento para entidade ou resposta deve ser feito em função auxiliar dentro do próprio arquivo. MapToEntity() ou MapToResponse() dependendo do caso.
+
+Os termos relacionados às regras de negócio foram definidos em português, a fim de manter alinhamento com o domínio da aplicação. Já os termos técnicos, como username, hashedPassword, createdAt, entre outros, foram definidos em inglês, seguindo convenções comuns de nomenclatura utilizadas no desenvolvimento de software.
+
 Requisitos não funcionais que devem ser seguidos na implementação de toda tarefa:
 
 Código	Requisito

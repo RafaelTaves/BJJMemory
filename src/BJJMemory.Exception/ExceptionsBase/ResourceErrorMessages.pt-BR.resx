@@ -165,6 +165,27 @@
   <data name="PASSWORD_UPPERCASE_LETTER" xml:space="preserve">
     <value>A senha deve conter pelo menos uma letra maiúscula.</value>
   </data>
+  <data name="POSITION_CATEGORY_NOT_FOUND" xml:space="preserve">
+    <value>A categoria informada para a posição não existe para o usuário.</value>
+  </data>
+  <data name="POSITION_CATEGORY_REQUIRED" xml:space="preserve">
+    <value>A categoria da posição é obrigatória.</value>
+  </data>
+  <data name="POSITION_DESCRIPTION_REQUIRED" xml:space="preserve">
+    <value>A descrição da posição é obrigatória.</value>
+  </data>
+  <data name="POSITION_INVALID_AUDIO_LINK" xml:space="preserve">
+    <value>O link de áudio informado para a posição é inválido.</value>
+  </data>
+  <data name="POSITION_INVALID_VIDEO_LINK" xml:space="preserve">
+    <value>O link de vídeo informado para a posição é inválido.</value>
+  </data>
+  <data name="POSITION_NOT_FOUND" xml:space="preserve">
+    <value>Posição não encontrada.</value>
+  </data>
+  <data name="POSITION_TITLE_REQUIRED" xml:space="preserve">
+    <value>O título da posição é obrigatório.</value>
+  </data>
   <data name="TITLE_REQUIRED" xml:space="preserve">
     <value>O título é obrigatório</value>
   </data>

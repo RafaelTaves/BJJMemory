@@ -1,13 +1,16 @@
 ﻿using BJJMemory.Domain.Repositories;
 using BJJMemory.Domain.Repositories.Categorias;
+using BJJMemory.Domain.Repositories.Posicoes;
 using BJJMemory.Domain.Repositories.Usuarios;
 using BJJMemory.Domain.Security.Cryptography;
 using BJJMemory.Domain.Security.Tokens;
 using BJJMemory.Domain.Services.LoggedUser;
+using BJJMemory.Domain.Services.Posicoes.Midia;
 using BJJMemory.Infrastructure.DataAccess;
 using BJJMemory.Infrastructure.DataAccess.Repositories;
 using BJJMemory.Infrastructure.Security.Tokens;
 using BJJMemory.Infrastructure.Services.LoggedUser;
+using BJJMemory.Infrastructure.Services.Posicoes.Midia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +27,9 @@ public static class DependencyInjectionExtension
 
         services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
         services.AddScoped<ILoggedUser, LoggedUser>();
+        services.AddScoped<IAudioPosicaoMidiaStrategy, AudioPosicaoMidiaStrategy>();
+        services.AddScoped<IVideoPosicaoMidiaStrategy, VideoPosicaoMidiaStrategy>();
+        services.AddScoped<IPosicaoMidiaFacade, PosicaoMidiaFacade>();
     }
 
     private static void AddToken(IServiceCollection services, IConfiguration configuration)
@@ -43,6 +49,9 @@ public static class DependencyInjectionExtension
         services.AddScoped<IUsuarioUpdateOnlyRepository, UsuarioRepository>();
         services.AddScoped<IUsuarioReadOnlyRepository, UsuarioRepository>();
         services.AddScoped<IUsuarioWriteOnlyRepository, UsuarioRepository>();
+        services.AddScoped<IPosicaoUpdateOnlyRepository, PosicaoRepository>();
+        services.AddScoped<IPosicaoReadOnlyRepository, PosicaoRepository>();
+        services.AddScoped<IPosicaoWriteOnlyRepository, PosicaoRepository>();
     }
 
     private static void AddDbContext(IServiceCollection services, IConfiguration configuration)

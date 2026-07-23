@@ -9,6 +9,7 @@ public class BJJMemoryDbContext : DbContext
 
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Categoria> Categorias { get; set; }
+    public DbSet<Posicao> Posicoes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,6 +33,28 @@ public class BJJMemoryDbContext : DbContext
             entity.HasOne<Usuario>()
                 .WithMany()
                 .HasForeignKey(categoria => categoria.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<Posicao>(entity =>
+        {
+            entity.HasIndex(posicao => new { posicao.UsuarioId, posicao.Titulo });
+            entity.HasIndex(posicao => posicao.CategoriaId);
+
+            entity.Property(posicao => posicao.Titulo)
+                .IsRequired();
+
+            entity.Property(posicao => posicao.Descricao)
+                .IsRequired();
+
+            entity.HasOne<Usuario>()
+                .WithMany()
+                .HasForeignKey(posicao => posicao.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne<Categoria>()
+                .WithMany()
+                .HasForeignKey(posicao => posicao.CategoriaId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
     }
