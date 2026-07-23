@@ -1,4 +1,5 @@
 ﻿using BJJMemory.Domain.Repositories;
+using BJJMemory.Domain.Repositories.Categorias;
 using BJJMemory.Domain.Repositories.Usuarios;
 using BJJMemory.Domain.Security.Cryptography;
 using BJJMemory.Domain.Security.Tokens;
@@ -36,6 +37,9 @@ public static class DependencyInjectionExtension
     private static void AddRepositories(IServiceCollection services)
     {
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<ICategoriaUpdateOnlyRepository, CategoriaRepository>();
+        services.AddScoped<ICategoriaReadOnlyRepository, CategoriaRepository>();
+        services.AddScoped<ICategoriaWriteOnlyRepository, CategoriaRepository>();
         services.AddScoped<IUsuarioUpdateOnlyRepository, UsuarioRepository>();
         services.AddScoped<IUsuarioReadOnlyRepository, UsuarioRepository>();
         services.AddScoped<IUsuarioWriteOnlyRepository, UsuarioRepository>();

@@ -14,6 +14,11 @@ public static class ResourceErrorMessages
     public static string EMAIL_ALREADY_EXISTS => GetString(nameof(EMAIL_ALREADY_EXISTS));
     public static string EMAIL_INVALID => GetString(nameof(EMAIL_INVALID));
     public static string EMAIL_REQUIRED => GetString(nameof(EMAIL_REQUIRED));
+    public static string CATEGORY_NAME_ALREADY_EXISTS => GetString(nameof(CATEGORY_NAME_ALREADY_EXISTS));
+    public static string CATEGORY_NAME_LENGTH => GetString(nameof(CATEGORY_NAME_LENGTH));
+    public static string CATEGORY_NAME_REQUIRED => GetString(nameof(CATEGORY_NAME_REQUIRED));
+    public static string CATEGORY_NOT_FOUND => GetString(nameof(CATEGORY_NOT_FOUND));
+    public static string CATEGORY_PARENT_NOT_FOUND => GetString(nameof(CATEGORY_PARENT_NOT_FOUND));
     public static string INVALID_LOGIN => GetString(nameof(INVALID_LOGIN));
     public static string PASSWORD_LOWERCASE_LETTER => GetString(nameof(PASSWORD_LOWERCASE_LETTER));
     public static string PASSWORD_MIN_LENGTH => GetString(nameof(PASSWORD_MIN_LENGTH));
